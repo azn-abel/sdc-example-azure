@@ -30,7 +30,7 @@
   },
   "routes": [
     {
-      "route": "/*",
+      "route": "/app",
       "allowedRoles": ["authenticated"]
     }
   ],
