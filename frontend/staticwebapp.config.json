@@ -2,6 +2,31 @@
   "navigationFallback": {
     "rewrite": "/index.html"
   },
+  "auth": {
+    "identityProviders": {
+      "customOpenIdConnectProviders": {
+        "azureDevOps": {
+          "registration": {
+            "clientIdSettingName": "AZURE_CLIENT_ID",
+            "clientCredential": {
+              "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+            },
+            "openIdConnectConfiguration": {
+              "wellKnownOpenIdConfiguration": "https://login.microsoftonline.com/096658ad-0136-40f0-a25b-8fec0fb9b61c/v2.0/.well-known/openid-configuration"
+            }
+          },
+          "login": {
+            "scopes": [
+              "openid",
+              "profile",
+              "email",
+              "499b84ac-1321-427f-aa17-267ca6975798/vso.code_write"
+            ]
+          }
+        }
+      }
+    }
+  },
   "routes": [
     {
       "route": "/app",
@@ -11,7 +36,7 @@
   "responseOverrides": {
     "401": {
       "statusCode": 302,
-      "redirect": "/.auth/login/aad"
+      "redirect": "/.auth/login/azureDevOps"
     }
   }
 }
