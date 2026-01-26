@@ -20,7 +20,8 @@
               "openid",
               "profile",
               "email",
-              "499b84ac-1321-427f-aa17-267ca6975798/vso.code_write"
+              "499b84ac-1321-427f-aa17-267ca6975798/vso.code_write",
+              "499b84ac-1321-427f-aa17-267ca6975798/vso.profile"
             ]
           }
         }
@@ -29,7 +30,7 @@
   },
   "routes": [
     {
-      "route": "/app",
+      "route": "/*",
       "allowedRoles": ["authenticated"]
     }
   ],
